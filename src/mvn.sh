@@ -33,7 +33,8 @@ print_items() {
 
 # Reopen Alfred on a query so the list refreshes in place after an action.
 alfred_search() {
-  osascript - "$1" <<'APPLESCRIPT'
+  local query="$1"
+  osascript - "$query" <<'APPLESCRIPT'
 on run argv
   tell application id "com.runningwithcrayons.Alfred" to search (item 1 of argv)
 end run
