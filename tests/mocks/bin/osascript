@@ -1,0 +1,3 @@
+#!/bin/bash
+# Log the search query passed to Alfred (last arg).
+echo "${@: -1}" >> "${OSASCRIPT_LOG:-/dev/null}"

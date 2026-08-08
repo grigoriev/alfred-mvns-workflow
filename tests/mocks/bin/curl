@@ -1,0 +1,27 @@
+#!/bin/bash
+# Mock curl for mvns tests. Central search (POST) returns popularity-ranked
+# components; repo1 maven-metadata.xml returns versions (ascending, as real).
+args="$*"
+case "$args" in
+  *browse/components*)
+    cat <<'JSON'
+{"components":[{"namespace":"com.google.guava","name":"guava","latestVersionInfo":{"version":"33.4.8-jre"},"packaging":"bundle","nsPopularityAppCount":48000,"dependentOnCount":1200},{"namespace":"com.example","name":"beta","latestVersionInfo":{"version":"1.0"},"packaging":"jar","nsPopularityAppCount":0,"dependentOnCount":0}]}
+JSON
+    ;;
+  *maven-metadata.xml*)
+    cat <<'XML'
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <versioning>
+    <latest>33.4.8-jre</latest>
+    <versions>
+      <version>32.0.0-jre</version>
+      <version>33.4.7-jre</version>
+      <version>33.4.8-jre</version>
+    </versions>
+  </versioning>
+</metadata>
+XML
+    ;;
+  *) printf '' ;;
+esac
