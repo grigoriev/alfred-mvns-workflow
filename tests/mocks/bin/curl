@@ -8,6 +8,7 @@ case "$args" in
 {"components":[{"namespace":"com.google.guava","name":"guava","latestVersionInfo":{"version":"33.4.8-jre"},"packaging":"bundle","nsPopularityAppCount":48000,"dependentOnCount":1200},{"namespace":"com.example","name":"beta","latestVersionInfo":{"version":"1.0"},"packaging":"jar","nsPopularityAppCount":0,"dependentOnCount":0}]}
 JSON
     ;;
+  *none/maven-metadata.xml*) printf '' ;;
   *maven-metadata.xml*)
     cat <<'XML'
 <?xml version="1.0" encoding="UTF-8"?>
