@@ -134,3 +134,17 @@ warm_cache() {
   run bash -c '. src/maven.sh; mvn_versions com.example none'
   [ -z "$output" ]
 }
+
+@test "mvn.sh: > update reports a missing updater bundle" {
+  cp src/update.sh "$BATS_TEST_TMPDIR/update.sh.bak"
+  rm -f src/update.sh
+  run bash -c '. src/mvn.sh list "> update"'
+  cp "$BATS_TEST_TMPDIR/update.sh.bak" src/update.sh
+  echo "$output" | jq -e '.items[0].title == "Updater unavailable"' >/dev/null
+}
+
+@test "mvn.sh: run with a download url routes to the installer" {
+  export OPEN_LOG="$BATS_TEST_TMPDIR/open.log"
+  run bash -c '. src/mvn.sh run "https://example.com/Maven.alfredworkflow"'
+  [ "$status" -eq 0 ]
+}
