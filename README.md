@@ -30,6 +30,16 @@ the modern `central.sonatype.com`.
 2. Under **Assets**, download `Maven.alfredworkflow`.
 3. Double click the file to add it to Alfred.
 
+### Verify
+
+Each release carries `Maven.alfredworkflow.intoto.jsonl`, a signed build
+provenance bundle. Check that this repository's release workflow built the
+download:
+
+```sh
+gh attestation verify Maven.alfredworkflow --repo grigoriev/alfred-mvns-workflow
+```
+
 ## Usage
 
 ```
