@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/grigoriev/alfred-mvns-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/grigoriev/alfred-mvns-workflow/actions/workflows/ci.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/grigoriev/alfred-mvns-workflow/badge)](https://scorecard.dev/viewer/?uri=github.com/grigoriev/alfred-mvns-workflow)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/14799/badge)](https://www.bestpractices.dev/projects/14799)
 [![Release](https://img.shields.io/github/v/release/grigoriev/alfred-mvns-workflow)](https://github.com/grigoriev/alfred-mvns-workflow/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
