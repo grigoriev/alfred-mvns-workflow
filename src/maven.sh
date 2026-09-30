@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# Maven Central access and dependency snippets. Search and versions use the
-# official Solr API at search.maven.org (the web UI redirects to
-# central.sonatype.com, but this API path still serves clean JSON). Responses
-# are cached under "$alfred_workflow_cache". The one place to change if the API
-# ever moves is SEARCH_URL.
+# Maven Central access and dependency snippets. Search uses
+# central.sonatype.com, versions use the repository metadata on repo1.maven.org.
+# Responses are cached under "$alfred_workflow_cache". If an endpoint moves,
+# change CENTRAL_SEARCH_URL or METADATA_URL.
 
 . src/cache.sh
 
