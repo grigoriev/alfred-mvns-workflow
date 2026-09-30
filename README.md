@@ -63,10 +63,10 @@ and version lists are cached for an hour; clear them with `mvn > delete cache`.
 ## Data source
 
 Search results come from `central.sonatype.com`, ranked by popularity, with a
-usage count in the subtitle. Version lists come from Maven Central's Solr API
-(`search.maven.org/solrsearch`), which returns clean version strings. Artifacts
-open on `central.sonatype.com`. The API access is confined to `src/maven.sh`, so
-a future endpoint change is a one-file edit.
+usage count in the subtitle. Version lists come from the repository metadata of
+Maven Central (`repo1.maven.org/maven2/.../maven-metadata.xml`). Artifacts open on
+`central.sonatype.com`. The API access is confined to `src/maven.sh`, so a future
+endpoint change is a one-file edit.
 
 ## Development
 

@@ -9,6 +9,11 @@ Releases before 0.1.1 are listed on the
 
 ## [Unreleased]
 
+### Fixed
+
+- The README names the real source of the version lists: the Maven Central repository
+  metadata, not the Solr API.
+
 ### Changed
 
 - The version bump moves the Unreleased entries of this changelog into a section for
